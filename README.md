@@ -34,19 +34,38 @@ You may work and talk with others in class for help completing this exercise.
 
 Instructions
 ---
+
+<h4>Step 1: Clone and Set Up the Project</h4>
+
 Having cloned this repo to your VM, we need to set up the project as follows:
 
-1. Install gems with `bundle install`
-2. Create the database with `rails db:migrate`
-3. Open up `app/models/department.rb` `test/models/department_test.rb` and  and complete the department model to pass the tests.
-4. Run the tests and see that tests for department passes while tests for faculty fail.
-4. Open up `app/models/faculty.rb` and review and complete the code so that the tests pass with 100% test coverage. Please note that some comments are already provided to you. 
-5. Open up `test/models/faculty_test.rb` and complete the tests so the methods commented on will be covered properly and completely
-	- to speed things up, we have provided a context for both departments and faculties for you.
-	- before testing, load the testing data into a clean copy of your dev database with the command `rails db:contexts`. (_Note that this is not built into Rails; it was written for you and also exists in your project starter code._) Once that's done and the contexts build without error, re-open rails console and run `Department.all` and `Faculty.all` and see that the testing context data is loaded in the dev environment.
+1. Install required gems with `bundle install`. This installs all necessary dependencies specified in the `Gemfile`.
+ 
+2. Create the database and apply migrations `rails db:migrate`. This sets up the database schema as defined in the project's migrations.
 
-8. What would `Faculty.alphabetical.active.first.department` return in rails console?  
- Go to rails console and verify that you are correct (or if not, figure out why you were wrong)
+<h4>Step 2: Implement and Test the Department Model</h4>
+1. Open `app/models/department.rb` and `test/models/department_test.rb`
+2. Implement the necessary parts of the Department model
+3. Run the tests and see that tests for department passes while tests for faculty fail.
+
+<h4>Step 3: Implement and Test the Faculty Model</h4>
+
+1. Open up `app/models/faculty.rb
+2. Review the existing code and complete any missing associations, validations, or scopes. Comments are already provided to guide your implementation.
+3. Run the tests again to confirm that Faculty tests still fail.
+4.  Open up `test/models/faculty_test.rb` and implement the missing cases. Ensure that all model methods and scopes are tested properly. 
+
+<h4>Step 4: Load Testing Contexts</h4>
+ 
+To speed things up, we have provided a context (predefined testing data) for both departments and faculties for you.
+
+1. Before testing, load the testing data into a clean copy of your dev database with the command `rails db:contexts`. (_Note that this is not built into Rails; it was written for you and also exists in your project starter code._) Once that's done and the contexts build without error, re-open rails console and run `Department.all` and `Faculty.all` and see that the testing context data is loaded in the dev environment.
+
+<h4>Step 5: Verify Queries in Rails Console</h4>
+Now, let's test some queries to confirm that your model associations and scopes work as expected.
+
+1. What would `Faculty.alphabetical.active.first.department` return in rails console?  
+2. Go to rails console and verify that you are correct (or if not, figure out why you were wrong)
 
 
 Prof. Houda
